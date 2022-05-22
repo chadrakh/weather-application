@@ -37,20 +37,27 @@ body {
     margin-top: 5rem;
 }
 
-.container {
-    width: max(40vw);
-    height: min(70vh);
-    /* border: 3px solid #071B32; */
-    border-radius: 5%;
+#card1, #card2, #card3 {
     margin-inline: auto;
-    background: linear-gradient(#5a6579, #071B32)
+    transition: 1s;
 }
 
-.content {
+#card1:hover, #card2:hover, #card3:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+
+.card-container {
+    width: min(30vw);
+    height: min(70vh);
+    border-radius: 7%;
+    background: linear-gradient(#5a6579, #071B32);
+}
+
+.card-content {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin: 2rem 0;
     padding: 3rem;
 }
 
@@ -69,7 +76,7 @@ body {
     vertical-align: top;
 }
 
-.forecast {
+.description {
     font-size: 20px;
     font-weight: var(--medium);
     text-transform: capitalize;
