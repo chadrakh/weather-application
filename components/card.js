@@ -1,5 +1,5 @@
-const app = document.getElementById("root");
-console.log(app);
+const root = document.getElementById("root");
+console.log(root);
 
 const createCard = (html) => {
     const template = document.createElement("template");
@@ -9,10 +9,9 @@ const createCard = (html) => {
 }
 
 const fetchWeatherAPI = async() => {
-    // const lat = 53.3811;
-    // const lon = 1.4701;
     const city = 'Birmingham, UK';
     const key = '06a2c505afed6691d1aa01d82d212b06';
+    const id = '1';
 
     const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`);
     console.log(res);
@@ -30,21 +29,38 @@ const fetchWeatherAPI = async() => {
 
     const card = () => {
         const newCard = createCard(`
-        <div id="card">
-            <div class="card-container">
-                <div class="uiControls"></div>
-                <div class="container">
-                    <div class="content">
+        <div id="app">
+            <div id="card${id}">
+                <div class="card-container">
+                    <div class="card-content">
                         <div class="city">${requestedLocation}</div>
                         <div class="temperature">${requestedLocationTemperature}<span>°</span></div>
-                        <div class="forecast">${weatherDescription}</div>
+                        <div class="description">${weatherDescription}</div>
+                    </div>
+                </div>
+            </div>
+            <div id="card2">
+                <div class="card-container">
+                    <div class="card-content">
+                        <div class="city">${requestedLocation}</div>
+                        <div class="temperature">${requestedLocationTemperature}<span>°</span></div>
+                        <div class="description">${weatherDescription}</div>
+                    </div>
+                </div>
+            </div>
+            <div id="card3">
+                <div class="card-container">
+                    <div class="card-content">
+                        <div class="city">${requestedLocation}</div>
+                        <div class="temperature">${requestedLocationTemperature}<span>°</span></div>
+                        <div class="description">${weatherDescription}</div>
                     </div>
                 </div>
             </div>
         </div>
         `)
     
-        app.appendChild(newCard);
+        root.appendChild(newCard);
     
     }
     card();
