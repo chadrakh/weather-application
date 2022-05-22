@@ -60,11 +60,17 @@ body {
 }
 
 .temperature {
-    font-size: 5em;
+    font-size: 100px;
     font-weight: var(--light);
+}
+
+.temperature span {
+    font-size: 50px;
+    vertical-align: top;
 }
 
 .forecast {
     font-size: 20px;
     font-weight: var(--medium);
+    text-transform: capitalize;
 }
